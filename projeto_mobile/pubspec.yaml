@@ -1,0 +1,33 @@
+name: projeto_mobile
+description: A new Flutter application.
+
+publish_to:
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.3
+  multi_select_flutter: ^4.0.0
+  cupertino_icons: ^1.0.2
+  confirm_dialog: ^1.0.0
+  intl: ^0.17.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+     - assets/images/idoso1.png
+     - assets/images/idoso2.png
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+
