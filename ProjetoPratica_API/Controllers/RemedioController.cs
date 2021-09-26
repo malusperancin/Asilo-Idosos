@@ -37,12 +37,26 @@ namespace ProjetoPratica_API.Controllers
             }
         }
 
-        [HttpGet("{UsuarioId}")]
+        [HttpGet("{codIdoso}")]
+        public async Task<IActionResult> Get(string codIdoso)
+        {
+            try
+            {
+                var result = this.Repo.GetRemedioIdoso(codIdoso);
+                return Ok(result);
+            }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
+            }
+        }
+
+           [HttpGet("horarios")]
         public async Task<IActionResult> Get(int UsuarioId)
         {
             try
             {
-                var result = await this.Repo.GetRemedioById(UsuarioId);
+                var result =  this.Repo.GetHorariosRemedios();
                 return Ok(result);
             }
             catch

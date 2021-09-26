@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:projeto_mobile/ui/idoso/idosos.dart';
+import 'package:projeto_mobile/ui/horarios/list_horarios.dart';
+import 'package:projeto_mobile/ui/list_idosos/idosos.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -10,15 +11,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomeScreen> {
-  List<Widget> _children = [
-    new Idosos(),
-  ];
+  List<Widget> _children = [new Idosos(), new ListHorarios()];
 
   int _selectedPage = 0;
 
   Future<void> createInstances() async {
     setState(() {
-      _children = [new Idosos()];
+      _children = [new Idosos(), new ListHorarios()];
     });
   }
 
@@ -48,7 +47,7 @@ class _HomePageState extends State<HomeScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.account_circle_rounded,
+                          Icon(Icons.wc_rounded,
                               color: _selectedPage == 0
                                   ? Colors.white
                                   : Colors.white38)
@@ -64,7 +63,7 @@ class _HomePageState extends State<HomeScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.wc_rounded,
+                          Icon(Icons.medication_rounded,
                               color: _selectedPage == 1
                                   ? Colors.white
                                   : Colors.white38)
@@ -80,7 +79,7 @@ class _HomePageState extends State<HomeScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.event_available,
+                          Icon(Icons.access_time_outlined,
                               color: _selectedPage == 2
                                   ? Colors.white
                                   : Colors.white38)

@@ -11,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using MySql.Data.EntityFrameworkCore.Extensions;
 using ProjetoPratica_API.Data;
 using MySqlConnector;
 
@@ -30,7 +29,7 @@ namespace ProjetoPratica_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             var connection = Configuration["ConnectionStrings:StringConexao"];
+            var connection = Configuration["ConnectionStrings:StringConexao"];
             services.AddDbContext<MoneyroContext>(options => options.UseMySql(connection));
             services.AddControllers();
             services.AddScoped<IRepository, Repository>();

@@ -13,19 +13,22 @@ class APIServices {
   static Future buscarIdosos() async {
     return await http.get(Uri.parse(url + 'idoso'));
   }
-    static Future buscarIdosoPorId(int id) async {
+
+  static Future buscarIdosoPorId(int id) async {
     return await http.get(Uri.parse(url + 'idoso/' + id.toString()));
   }
-
 
   static Future buscarRemedios() async {
     return await http.get(Uri.parse(url + 'remedio'));
   }
 
-  static Future buscarRemedioIdoso() async {
-    return await http.get(Uri.parse(url + 'equipes'));
+  static Future buscarRemedioIdoso(String codIdoso) async {
+    return await http.get(Uri.parse(url + 'remedio/' + codIdoso));
   }
 
+  static Future buscarHorariosRemedios() async {
+    return await http.get(Uri.parse(url + 'remedio/horarios'));
+  }
 
 /*
   static Future<bool> adicionarEvento(Evento evento) async {

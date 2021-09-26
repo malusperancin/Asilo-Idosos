@@ -19,6 +19,8 @@ namespace ProjetoPratica_API.Data
         Task<Idoso> GetIdosoById(int Id);
         Task<Remedio[]> GetAllRemedios();
         Task<Remedio> GetRemedioById(int Id);
+        List<Object> GetRemedioIdoso(string codIdoso);
+        List<Object> GetHorariosRemedios();
 
     }
 
