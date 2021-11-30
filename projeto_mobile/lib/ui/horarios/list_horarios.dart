@@ -54,8 +54,8 @@ class _ListHorariosState extends State<ListHorarios> {
     return Stack(children: [
       Cabecalho(
           cor: Colors.grey[200],
-          titulo: "Horarios",
-          icone: Icons.people_alt_rounded),
+          titulo: "Agenda",
+          icone: Icons.event_available_rounded),
       Expanded(
           child: Padding(
               padding: EdgeInsets.only(top: 100),
